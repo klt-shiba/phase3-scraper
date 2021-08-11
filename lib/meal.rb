@@ -1,11 +1,10 @@
-class Course
+class Meal
     
-    attr_accessor :title, :schedule, :description
-
+    attr_accessor :name, :price
 
     @@all = []
 
-    def initialize
+    def initialize()
         @@all << self
     end
 

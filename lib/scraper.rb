@@ -2,32 +2,38 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-require_relative './clothes.rb'
+require_relative './meal.rb'
 
 class Scraper
 
   def get_page
 
-    html = open("https://www.kfc.com.au/menu/burgers")
+    html = open("https://gaiwong.com.au/online-order-menu/")
     doc = Nokogiri::HTML(html)
     # binding.pry
   end
 
   def get_menu
-    self.get_page
+    get_page.css("div.et_pb_module.et_pb_shop")
   end
 
   def collect_meal
 
-    meals = {}
+    meals = []
 
-    self.get_menu.css('div.col-lg-4.meal-type').each do |meal|
+    get_menu.css('li.product.type-product').each do |meal|
 
-        heading = meal.css("div.generic-cart-item").text
-        meals << heading
+        item = Meal.new()
+        item.name = meal.css("h2.woocommerce-loop-product__title").text.strip
+        item.price = meal.css("span.woocommerce-Price-amount bdi").text
+        
     end
-    puts self.get_menu
+
+    Meal.all.each do |meal|
+        puts "#{meal.name} -- #{meal.price}"
     end
+  
+end
 
 end
 
