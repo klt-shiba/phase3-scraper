@@ -13,7 +13,7 @@ class Scraper
     # binding.pry
   end
 
-  def get_menu
+  def get_food
     get_page.css("div.et_pb_module.et_pb_shop")
   end
 
@@ -21,21 +21,29 @@ class Scraper
 
     meals = []
 
-    get_menu.css('li.product.type-product').each do |meal|
-
+    puts ""
+    puts ""
+    puts "What do you want to order?"
+    get_food.css('li.product.type-product').each do |meal|
+        print "="
         item = Meal.new()
         item.name = meal.css("h2.woocommerce-loop-product__title").text.strip
         item.price = meal.css("span.woocommerce-Price-amount bdi").text
-        
     end
+  end
 
-    Meal.all.each do |meal|
-        puts "#{meal.name} -- #{meal.price}"
+
+  def print_menu
+    system "clear" 
+    collect_meal
+    puts ""
+    Meal.all.each_with_index do |meal, index|
+      puts "#{index + 1}. #{meal.name}"
+      puts "--- #{meal.price}"
+      puts ""
     end
-  
+  end
 end
 
-end
 
-
-Scraper.new.collect_meal
+Scraper.new.print_menu

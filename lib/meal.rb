@@ -1,6 +1,6 @@
 class Meal
     
-    attr_accessor :name, :price
+    attr_accessor :id, :name, :price
 
     @@all = []
 
