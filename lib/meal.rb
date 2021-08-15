@@ -16,4 +16,9 @@ class Meal
         @@all.clear
     end
 
+    def self.find_meal(item_number)
+        index_number = (item_number.to_i - 1)
+        @@all.fetch(index_number)
+    end
+
 end
