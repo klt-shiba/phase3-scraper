@@ -1,3 +1,4 @@
+
 class Invoice
 
     @@all
@@ -5,9 +6,4 @@ class Invoice
     def initialize
         @@all << self
     end
-
-    def print_menu
-    end
-
-
 end

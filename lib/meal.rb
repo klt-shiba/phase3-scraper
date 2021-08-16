@@ -1,10 +1,11 @@
+
 class Meal
     
     attr_accessor :id, :name, :price
 
     @@all = []
 
-    def initialize()
+    def initialize
         @@all << self
     end
 
@@ -20,5 +21,4 @@ class Meal
         index_number = (item_number.to_i - 1)
         @@all.fetch(index_number)
     end
-
 end
