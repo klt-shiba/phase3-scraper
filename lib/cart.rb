@@ -17,11 +17,15 @@ class Cart
         @@items << item
     end
 
+    def check_number_of_items(food)
+      
+    end
+
     def self.read_items
       puts ""
       puts "Your order:"
       @@items.map do | item |
-        puts "**#{item.name} -- $#{item.price}"
+        puts "** #{item.name} -- $#{item.price}"
       end
     end
 

@@ -7,4 +7,4 @@ require_relative '../lib/calculator'
 require_relative '../lib/plot'
 require_relative '../lib/menu'
 
-
+Plot.new.welcome_customer
