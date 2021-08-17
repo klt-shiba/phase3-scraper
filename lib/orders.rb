@@ -1,13 +1,12 @@
 class Orders
 
     @@all = []
-    @@order_items = []
 
+    attr_accessor :id, :order_items
 
-    attr_accessor :id
-
-    def initialize(id: nil, )
+    def initialize(id: nil)
         self.id = id
+        self.order_items = []
         @@all << self
     end
 

@@ -7,6 +7,7 @@ require_relative './cart.rb'
 require_relative './invoice.rb'
 require_relative './scraper.rb'
 require_relative './menu.rb'
+require_relative './orders.rb'
 
 class Plot
   
@@ -48,6 +49,7 @@ class Plot
         say_goodbye
         puts ""
       else
+        system "clear"
         puts "Sorry can you repeat that [Y/N]?"
         yes_or_no_customer_ordering
       end 
@@ -86,6 +88,7 @@ class Plot
         Cart.calculate_total
         say_goodbye
       else
+        system "clear"
         puts "Sorry can you repeat that [Y/N]?"
         yes_or_no_order_food
       end 
