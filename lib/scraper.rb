@@ -10,12 +10,15 @@
     end
 
     def collect_meal
+      id = 0
       get_food.css('li.product.type-product').each do |meal|
         item = Meal.new()
         item.name = meal.css("h2.woocommerce-loop-product__title").text.strip
         price = meal.css("span.woocommerce-Price-amount bdi").text
         price[0] = ""
         item.price = price.to_f
+        id += 1
+        item.id = id
       end
     end
     

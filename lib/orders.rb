@@ -6,7 +6,7 @@ class Orders
 
     attr_accessor :id
 
-    def initialize(id: nil)
+    def initialize(id: nil, )
         self.id = id
         @@all << self
     end

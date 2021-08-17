@@ -5,7 +5,8 @@ class Meal
 
     @@all = []
 
-    def initialize
+    def initialize(id: nil)
+        self.id = id
         @@all << self
     end
 

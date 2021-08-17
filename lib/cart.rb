@@ -17,10 +17,6 @@ class Cart
         @@items << item
     end
 
-    def check_number_of_items(food)
-      
-    end
-
     def self.read_items
       puts ""
       puts "Your order:"
