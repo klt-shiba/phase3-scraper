@@ -15,18 +15,18 @@ class Plot
         system "clear"
         Scraper.new.collect_meal
         puts ""
-        puts "Welcome to Gaiwong chicken"
-        puts "We love food. More specifically, we love Malaysian comfort food!"
-        puts "Whether it’s after a long hard day,"
-        puts "or catching up with friends and family over a weekend,"
-        puts "food brings everyone together."
+        puts "\u{1F414} Welcome to Gaiwong chicken"
+        puts "\u{1F60D} We love food. More specifically, we love Malaysian comfort food!"
+        puts "\u{1F3C4} Whether it’s after a long hard day,"
+        puts "\u{1F468} or catching up with friends and family over a weekend,"
+        puts "\u{1F449} food brings everyone together."
         puts ""
         is_customer_ordering
     end
 
     def is_customer_ordering
       puts ""
-      puts "Would you like to make an order [Y/N]?"
+      puts "Would you like to make an order Yes \u{1F44D} or No \u{1F44E} ?"
       puts ""
       yes_or_no_customer_ordering
     end
@@ -50,7 +50,7 @@ class Plot
         puts ""
       else
         system "clear"
-        puts "Sorry can you repeat that [Y/N]?"
+        puts "Sorry can you repeat that Yes \u{1F44D} or No \u{1F44E}?"
         yes_or_no_customer_ordering
       end 
     end
@@ -69,7 +69,7 @@ class Plot
         puts ""
         Cart.add_to_cart
         puts ""
-        puts "Do you want anything else [Y/N]?"
+        puts "Do you want anything else Yes \u{1F44D} or No \u{1F44E}?"
         puts ""
         yes_or_no_order_food
     end
@@ -89,7 +89,7 @@ class Plot
         say_goodbye
       else
         system "clear"
-        puts "Sorry can you repeat that [Y/N]?"
+        puts "Sorry can you repeat that Yes \u{1F44D} or No \u{1F44E}?"
         yes_or_no_order_food
       end 
     end
