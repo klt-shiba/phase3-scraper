@@ -1,13 +1,4 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
 
-require_relative './meal.rb'
-require_relative './cart.rb'
-require_relative './invoice.rb'
-require_relative './scraper.rb'
-require_relative './menu.rb'
-require_relative './orders.rb'
 
 class Plot
   
@@ -33,7 +24,7 @@ class Plot
 
     def say_goodbye
       puts ""
-      puts "Thanks for coming, we hope to see you again!"
+      puts "\u{1F970}Thanks for coming, we hope to see you again!"
       puts ""
     end
 
@@ -57,7 +48,8 @@ class Plot
 
     def show_customer_menu
       system "clear"
-      puts "Here's our menu"
+      puts ""
+      puts "\u{2B50} Here's our menu \u{2B50}"
       puts ""
       Menu.print_menu
       puts ""
@@ -65,7 +57,7 @@ class Plot
     end
 
     def order_food
-        puts "Enter the number of dish you would like to order"
+        puts "\u{1F914} Enter the number of dish you would like to order"
         puts ""
         Cart.add_to_cart
         puts ""

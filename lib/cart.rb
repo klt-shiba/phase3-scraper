@@ -19,9 +19,10 @@ class Cart
 
     def self.read_items
       puts ""
-      puts "Your order:"
+      puts "\u{1F37D} Your order:"
+      puts ""
       @@items.map do | item |
-        puts "** #{item.name} -- $#{item.price}"
+        puts "\u{2714} #{item.name} -- $#{item.price}"
       end
     end
 
@@ -32,8 +33,8 @@ class Cart
           value = item.price
           total += value.to_i
         end
-        puts "Your total is $#{total.round(2)}"
-        puts ""
+        puts "\u{1F4B0}Your total is $#{total.round(1)}"
+        puts "" d
     end
 
     def self.add_to_cart
