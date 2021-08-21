@@ -34,7 +34,7 @@ class Cart
           total += value.to_i
         end
         puts "\u{1F4B0}Your total is $#{total.round(1)}"
-        puts "" d
+        puts ""
     end
 
     def self.add_to_cart
