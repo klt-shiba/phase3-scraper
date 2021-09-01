@@ -1,19 +1,9 @@
 
 class Cart
 
-    @@all = []
     @@items = []
 
-    def initialize
-        @@all << self
-        @@items
-    end
-
-    def add_item(item)
-        @@items << item
-    end
-
-    def calculate_price(item)
+    def self.add_item(item)
         @@items << item
     end
 
@@ -23,6 +13,9 @@ class Cart
       puts ""
       @@items.map do | item |
         puts "\u{2714} #{item.name} -- $#{item.price}"
+        puts ""
+        puts "  -#{item.description}"
+        puts ""
       end
     end
 
@@ -40,8 +33,7 @@ class Cart
     def self.add_to_cart
       input = gets
       meal = Meal.find_meal(input.chomp)
-      cart = Cart.new
-      cart.add_item(meal)
+      self.add_item(meal)
       system "clear" 
       puts "We've added #{meal.name} to your order."
       puts Cart.read_items
